@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "target": "ES2022", // specify ECMAScript target version
+        "module": "commonjs", // specify module code generation
+        "outDir": "./dist", // specify output directory
+        "rootDir": "./src", // specify input directory
+        "strict": true, // enable all strict type-checking options
+        "esModuleInterop": true, // emit additional JavaScript to ease support for importing CommonJS modules
+        "skipDefaultLibCheck": false, // skip type checking of default library declaration files
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true // emit design-type metadata for decorated declarations in source files
+    },
+    "include": ["src/**/*"], // specify files to include
+    "exclude": ["node_modules", "mysqldb"] // specify files to exclude
+}
