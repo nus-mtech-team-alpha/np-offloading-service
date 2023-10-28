@@ -1,9 +1,9 @@
 
-import { appDataSource } from "../app";
+import { offloadDataSource } from "../app";
 import { Offloading } from "../entity/Offloading";
 
 export class OffloadingDAO {
-    private offloadingRepository = appDataSource.getRepository(Offloading);
+    private offloadingRepository = offloadDataSource.getRepository(Offloading);
 
     async all() {
         return this.offloadingRepository.find();

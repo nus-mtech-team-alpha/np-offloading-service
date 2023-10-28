@@ -1,0 +1,68 @@
+<!-- FILEPATH: /home/winda/git-repo/np-offloading-service/public/index.html -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Offloading</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.21.4/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="css/style.css"></href>
+</head>
+
+<body>
+    <div id="app">
+        <div class="row">
+            <h1>Offloading</h1>
+        </div>
+        <div class="row">
+            <table v-if="items.length">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Lecturer-Module ID</th>
+                        <th>Hours per Week</th>
+                        <th>Justification</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="item in items" :key="item.offloading_id">
+                        <td>{{ item.offloading_id }}</td>
+                        <td>{{ item.lecturer_module_id }}</td>
+                        <td>{{ item.num_of_hour_weekly }}</td>
+                        <td>{{ item.justification }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="row">
+            <input type="button" value="Add" onclick="window.location.href='add.html'">
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                items: []
+            },
+            methods: {
+                fetchData: function () {
+                    axios.get('http://127.0.0.1:3000/offload/api/offloadings/')
+                        .then(response => {
+                            this.items = response.data;
+                        })
+                        .catch(error => {
+                            console.error("There was an error fetching the data", error);
+                        });
+                }
+            },
+            mounted: function () {
+                this.fetchData();
+            }
+        });
+    </script>
+</body>
+
+</html>

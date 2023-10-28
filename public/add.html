@@ -1,0 +1,33 @@
+<!-- FILEPATH: /home/winda/git-repo/np-offloading-service/public/index.html -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Offloading</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css"></href>
+</head>
+
+<body>
+    <div id="app">
+        <h2>Offloading</h2>
+        <form method="post" action="/offload/add">
+            <div class="box">
+                <div>
+                    <div class="row"><label>Secondment / Special Project / OIP / Committee / Module</label></div>
+                    <div class="row"><input type="text" name="lecturer_module_id"></div>
+                    <div class="row"><label>No. of hours/week of offloading</label></div>
+                    <div class="row"><input type="text" name="num_of_hour_weekly"></div>
+                    <div class="row"><label>Justification</label></div>
+                    <div class="row"><input type="text" name="justification"></div>
+                </div>
+                <div><input type="button" value="Cancel" onclick="window.location.href='index.html'"><input
+                        type="submit" value="Save"></div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

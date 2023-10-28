@@ -1,0 +1,61 @@
+body {
+    background-color: lightgrey;
+}
+
+.box {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+table {
+    background-color: white;
+    border-radius: 0.5em;
+    padding: 0px;
+    width: 100%;
+}
+
+th,
+td {
+    padding: 0.5em;
+    text-align: center;
+}
+
+tr {
+    border-bottom: 1px solid lightgrey;
+}
+
+#app {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.row {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+input[type="button"] {
+    background-color: lightgrey;
+    border: 2px solid grey;
+    color: grey;
+    padding: 0.5em;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    min-width: 8em;
+}
+
+input[type="submit"] {
+    background-color: grey;
+    border: 2px solid grey;
+    color: white;
+    padding: 0.5em;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    min-width: 8em;
+}
+
+input {
+    margin-right: 1em;
+}

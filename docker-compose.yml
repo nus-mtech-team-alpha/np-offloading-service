@@ -1,27 +1,28 @@
+name: np-offloading
 networks:
   default:
     name: np-core-net
 services:
-  np-offloading-service:
+  offloading-service:
     build: .
-    image: np-offloading-service
-    container_name: np-offloading-service
+    image: np-offloading
+    container_name: offloading-service
     depends_on:
-      mysql-db:
+      offloading-db:
         condition: service_healthy
     ports:
       - 3000:3000
     env_file:
-      - .env
-  mysql-db:
+      - .service-env
+  offloading-db:
     image: mysql:8.0.33
-    container_name: mysql-db
+    container_name: offloading-db
     ports:
-      - 3306:3306
+      - 13306:3306
     volumes:
       - ./mysqldb:/var/lib/mysql
     env_file:
-      - .env
+      - .db-env
     healthcheck:
       test: mysql --user=$$MYSQL_USER --password=$$MYSQL_PASSWORD -e 'SHOW DATABASES;'
       start_period: 60s
