@@ -58,10 +58,9 @@ router.use('/api', offloadingController);
 router.use('/', viewController);
 app.use('/offload', router);
 app.listen(port, () => {
-    console.log(`Server started on http://localhost:${port}/offload`);
 });
 
-const consul = new Consul({ host: 'consul', port: '8500', promisify: true});
+const consul = new Consul({ host: 'consul-headless.default.svc.cluster.local', port: '8500', promisify: true});
 const serviceDetails = {
     id: 'np-offloading',
     name: 'np-offloading',
